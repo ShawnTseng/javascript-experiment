@@ -1,23 +1,15 @@
-var user = { name: 'Shawn', age: 18 };
-for (const key in user) {
-    if (user.hasOwnProperty(key)) {
-        const element = user[key];
-        let context = '';
-        context += key + ': ';
-        context += element;
-        context += '<br>';
-        document.getElementById('demo1').innerHTML += context;
+var user = {
+    name: 'Shawn',
+    getName: function () {
+        return this.name;
     }
 }
 
-user.dept = 'mkpl';
-for (const key in user) {
-    if (user.hasOwnProperty(key)) {
-        const element = user[key];
-        let context = '';
-        context += key + ': ';
-        context += element;
-        context += '<br>';
-        document.getElementById('demo2').innerHTML += context;
-    }
+document.getElementById('demo1').innerHTML = user.getName();
+document.getElementById('demo2').innerHTML = user.getName;
+
+user.attachPrefix = function (prefix) {
+    return prefix + ' ' + this.name;
 }
+
+document.getElementById('demo3').innerHTML = user.attachPrefix('Test');
