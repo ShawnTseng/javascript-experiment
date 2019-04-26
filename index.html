@@ -6,10 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
 
-<body>
+<body onload="pageOnLoad()" onunload="pageOnUnload()">
+    <div id="demo1" onclick="demo1click(this)">Click me</div>
+    <button onclick="demo2click()">Show Time</button>
+    <div id="demo2"></div>
+    <button id="show-date">Show Time !</button>
+    <div id="demo3"></div>
+    <input type="text" onchange="upperCase(this)">
+    <div id="demo4" onmouseover="hoverEvent(this)" onmouseout="outEvent(this)">Hi, please hover me!</div>
 
     <script src="index.js"></script>
 </body>
